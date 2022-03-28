@@ -11,12 +11,14 @@
     $filename = 'imagens/'.basename($_FILES["fileUpload"]["name"]);	//imagem
 
 	if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"],  "../../".$filename)) {
-        // echo executarSQL("INSERT INTO produtos (Tipo_Produto, Nome_Produto, Descricao_Produto, Preco_Produto, Desconto, Imagem, Ativo) 
-        //          VALUES (".$product_type.", '".$nome."', '".$descricao."', ".$preco.", ".$promocao.", ".$desconto.", '".$filename."', ".$product_active.")"); 
-        executarSQL("INSERT INTO produtos (Tipo_Produto, Nome_Produto, Descricao_Produto, Preco_Produto, Promocao, Desconto, Imagem, Ativo) 
-                    VALUES (".$product_type.", '".$nome."', '".$descricao."', ".$preco.", ".$promocao.", ".$desconto.", '".$filename."', ".$product_active.")"); 
-                    
-        header("Location: ./list_products.php");
+        try{
+            executarSQL("INSERT INTO produtos (Tipo_Produto, Nome_Produto, Descricao_Produto, Preco_Produto, Promocao, Desconto, Imagem, Ativo)
+                        VALUES(".$product_type.", '".$nome."', '".$descricao."', ".$preco.", ".$promocao.", ".$desconto.", '".$filename."', ".$product_active.")");
+
+            header("Location: ./list_products.php");
+        }catch(Exception $e){
+            echo $e->getMessage();
+        }
 	} else {
 		echo "<h1>Erro ao carregar imagem!</h1>";
 	}
