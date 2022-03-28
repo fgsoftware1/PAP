@@ -1,0 +1,6 @@
+{
+	"editor.autoIndent": "full",
+	"editor.minimap.enabled": false,
+	"explorer.compactFolders": false,
+	"editor.formatOnSaveMode": "modificationsIfAvailable"
+}
