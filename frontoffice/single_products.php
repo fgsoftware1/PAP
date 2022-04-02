@@ -43,37 +43,59 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 <body>
     <?php
-	    include("./utils/conexao.inc.php");
+	    include("./utils/conexao.inc.php"); 
     ?>
-<div class="wrap">
     <div class="total">
-        <div class="header">
-            <div class="clear"></div>
+        <div class="wrap">
+            <div class="header">
                 <div class="header-bot">
                     <div class="logo">
-                        <img src="images/logo.png" alt="" />
+                        <a href="products.php"><img src="images/logo.png" alt="" /></a>
                     </div>
                     <div class="header_top_right">
                         <ul>
-                            <li><a href=".7login.php">Login</a></li>
+                            <li><a href="./login.php">Login</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="menu">
-                <div class="top-nav">
-                    <ul>
-                        <li class="active"><a href="index.php">Inicio</a></li>
-                        <li><a href="about.php">Sobre</a></li>
-                        <li><a href="products.php">Produtos</a></li>
-                        <!--<li><a href="pricing.php">Preço</a></li>-->
-                        <li><a href="booking.php">Reserva</a></li>
-                        <li><a href="events.php">Eventos</a></li>
-                        <li><a href="contact.php">Contatos</a></li>
-                    </ul>
-            <div class="clear"></div>
+        <div class="main">
+            <div class="container-flex">
+                <div class="row">
+                    <?php 
+                        $consulta = "SELECT * FROM produtos WHERE ID_Produto = ".$_GET["ID"]." ";
+
+                        if($result = executarSQL($consulta)){
+                            while($row = mysqli_fetch_array($result)){
+                                echo "<center>";
+                                    echo "<h1>".$row["Nome_Produto"]."</h1>";
+                                echo "</center>";
+                                echo "<hr/>";
+                                echo "<br/>";
+                                echo "<div class='col-md-4'>";
+                                    echo "<img src='../".$row["Imagem"]."'  />";
+                                echo "</div>";
+                                echo "<div class='col-md-8'>";
+                                    echo "<p>".$row["Descricao_Produto"]."</p>";
+                                echo "</div>";
+                                echo "<div class='col-md-8'>";
+                                    if($row["Promocao"] = 1){
+                                        echo number_format((float)$row["Preco_Produto"] - ($row["Preco_Produto"] * ($row["Desconto"] / 100)), 2 )."€"."</h5>";
+                                    }else{
+                                        echo $row["Preco_Produto"]."€";
+                                    }
+                                echo "</div>";
+                            }
+                        }
+                    ?>
+                </div>
+            </div>
         </div>
     </div>
+<?php 
+	include("./footer/footer.php"); 
+?>
 </body>
+</html>  

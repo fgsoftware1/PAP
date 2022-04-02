@@ -1,5 +1,7 @@
 <?php 
 	include("./header/header.php"); 
+
+	//dp => decimal places
 ?>		
 <div class="main">
 	<div class="container-fluid">
@@ -17,7 +19,9 @@
 							echo "<h4>".$row["Nome_Produto"]."</h4>";
 							echo "(".$row["Desconto"]."%)";
 						echo "</center>";
-						echo "<img src='../".$row["Imagem"]."' height='320' width='640'>";
+						echo "<a href='./single_products.php?ID=".$row["ID_Produto"]."'>";
+							echo "<img src='../".$row["Imagem"]."' height='320' width='640'>";
+						echo "</a>";
 						echo "<center>";
 							echo "<del>".$row["Preco_Produto"]."€</del>";
 							echo "&nbsp&nbsp";																					//dp
@@ -41,8 +45,17 @@
 						echo "<div class='col-sm-3'>";
 							echo "<center>";
 								echo "<h3>".$row["Nome_Produto"]."";
-								echo "<img src='../".$row["Imagem"]."' height='320' width='640'/>";
-								echo $row["Preco_Produto"]."€";
+								echo "<a href='./single_products.php?ID=".$row["ID_Produto"]."'>";
+									echo "<img src='../".$row["Imagem"]."' height='320' width='640'/>";
+								echo "</a>";
+								if($row["Promocao"] == 1){
+									echo "<del>".$row["Preco_Produto"]."€</del>";
+									echo "&nbsp&nbsp";					
+																																		//dp
+									echo number_format((float)$row["Preco_Produto"] - ($row["Preco_Produto"] * ($row["Desconto"] / 100)), 2 )."€"."</h5>";
+								}else{
+									echo $row["Preco_Produto"]."€";
+								}
 							echo "</center>";
 						echo "</div>";
 					}

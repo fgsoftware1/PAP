@@ -66,7 +66,8 @@
 										echo "<td>".$row["Tipo_Produto"]."</td>";
 										echo "<td>".$row["Nome_Produto"]."</td>";
 										echo "<td>".$row["Descricao_Produto"]."</td>";
-										echo "<td>".$row["Preco_Produto"]."</td>";
+																							//dp(decimal places)
+										echo "<td>".number_format((float)$row["Preco_Produto"], 2 )."</td>";
 										echo "<td>",$row["Promocao"],"</td>";
 										echo "<td>".$row["Desconto"]."</td>";
 										echo "<td>".$row["Imagem"]."</td>";

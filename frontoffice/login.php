@@ -1,7 +1,6 @@
 <?php
 	include("./header/header.php");
 ?>
-<script src="scripts/script_login.js"></script>
 <div class="main">
    	<div class="contact">
 		<div class="col span_2_of_3">
@@ -9,14 +8,14 @@
 				<div class="col_1_of_2 span_1_of_2">
 					<h2> Login</h2>
 
-					<form name="f1" action="scripts/script_login.php" onsubmit="validate()" method="POST">
-					    <div>
-						    <span><label>E-Mail</label></span>
-						    <span><input id="email" name="email" type="email" class="form-control"></span>
+					<form name="f1" action="scripts/script_signin.php" onsubmit="validate()" method="POST">
+						<div>
+							<span><label>E-Mail</label></span>
+							<span><input id="email" name="email" type="email" class="form-control"></span>
 						</div>
 						<div>
-						    <span><label>Password</label></span>
-						    <span><input id="pass" name="pass" type="password" class="form-control"></span>
+							<span><label>Password</label></span>
+							<span><input id="pass" name="pass" type="password" class="form-control"></span>
 						</div>
 						<p>
 						<div>
@@ -27,7 +26,7 @@
 			<div class="col_1_of_2 span_1_of_2">
 				<h2> Registar</h2>
 
-				<form action="scripts/script_signup.php" method="POST">
+				<form action="scripts/script_signup.php" onsubmitmethod="POST">
 					<div>
 						<span><label>Nome</label></span>
 						<span><input name="nome" type="text" class="form-control"></span>
@@ -58,8 +57,6 @@
 <?php
 	include("./footer/footer.php");
 ?>
+<script src="scripts/signinValidation.js"></script>
 </body>
 </html>
-
-
-

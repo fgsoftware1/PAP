@@ -3,22 +3,20 @@
 
     include("../utils/conexao.inc.php");
 
-    $email = $_POST["email"];
-    $pass = $_POST["pass"];
-
     if(isset($_POST["login"])){
+		$email = $_POST["email"];
+		$pass = $_POST["pass"];
+
 		try{
-			$query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$pass'";
+			$query = executarSQL("SELECT * FROM utilizadores WHERE Email = ".$email."");
 			$row = mysqli_fetch_array($query);
 
 			if(password_verify($password, $row["password"]) && mysqli_num_rows($query) == 1){
-				$_SESSION['id_user'] = $id_utilizador;
-
-                $loggedin = true;
+				$_SESSION['email'] = $email;
 
 				header("Location: ../index.php");
 			}else{
-				header("Location: ./login.php?erro=1");
+				header("Location: ../login.php?erro=1");
 			}
 		}
 		catch(Exception $erro){
