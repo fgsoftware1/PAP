@@ -45,26 +45,19 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <?php
 	    include("./utils/conexao.inc.php"); 
     ?>
-    <div class="wrap">
-        <div class="total">
+    <div class="total">
+        <div class="wrap">
             <div class="header">
-                <div class="header_top_right">
-                    <ul>
-                        <li><a href="#">Login</a></li> |
-                        <li><a href="#">Sign Up</a></li>
-                    </ul>
-                </div>
                 <div class="clear"></div>
                 <div class="header-bot">
                     <div class="logo">
-                        <a href="index.html"><img src="images/logo.png" alt="" /></a>
+                        <a href="events.php"><img src="images/logo.png" alt="" /></a>
                     </div>
-                    <ul class="follow_icon">
-                        <li><a href="#"><img src="images/fb.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/googleplus.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/tw.png" alt=""></a></li>
-                        <li><a href="#"><img src="images/pinterest.png" alt=""></a></li>
-                    </ul>
+                    <div class="header_top_right">
+                        <ul>
+                            <li><a href="./login.php">Login</a></li>
+                        </ul>
+                    </div>
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>

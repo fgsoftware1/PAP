@@ -20,6 +20,6 @@ function validate()
         pass.focus();
     }else
     {
-        window.location = "scripts/script_login.php";
+        window.location = "scripts/script_signin.php";
     }
 }

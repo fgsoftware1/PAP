@@ -109,6 +109,6 @@ if (isset($_GET["ID"])) {
 	</main>
 	<!--jQuery-->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="../../frontoffice/utils/image_preview.js"></script>
+	<script src="../../frontoffice/scripts/image_preview.js"></script>
 </body>
 </html>

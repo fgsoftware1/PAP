@@ -12,6 +12,7 @@
 	$product_type = $row["Tipo_Produto"];
 	$nome = $row["Nome_Produto"];
 	$descricao = $row["Descricao_Produto"];
+	$ingredientes = $row["Ingredientes"];
 	$preco = $row["Preco_Produto"];
 	$promocao = $row["Promocao"];
 	$active = $row["Ativo"];
@@ -20,7 +21,7 @@
 	$title_page = "Alterar produto";
   }
 ?>
-<html> 
+<html>
 	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -83,8 +84,12 @@
 				<input type="text" class="form-control" id="descricao" name="descricao"  value="<?php echo (isset($descricao) ? $descricao : ''); ?>"/>
 			</div>
 			<div class="mb-3">
+				<label for="ingredientes" class="form-label">ingredientes</label>
+				<input type="text" class="form-control" id="ingredientes" name="ingredientes"  value="<?php echo (isset($ingredientes) ? $ingredientes : ''); ?>"/>
+			</div>
+			<div class="mb-3">
 			  	<label for="preco" class="form-label">preco</label>
-			  	<input type="text" class="form-control" id="preco" name="preco" value="<?php echo (isset($preco) ? $preco : ''); ?>" /> 
+			  	<input type="text" class="form-control" id="preco" name="preco" value="<?php echo (isset($preco) ? $preco : ''); ?>" />
 			</div>
 			<div class="mb-3">
 				<label for="promocao" class="form-label">promocao?</label>
@@ -95,7 +100,7 @@
 			</div>
 			<div class="mb-3">
 			  	<label for="desconto" class="form-label">desconto</label>
-			  	<input type="text" class="form-control" id="desconto" name="desconto" value="<?php echo (isset($desconto) ? $desconto : ''); ?>" /> 
+			  	<input type="text" class="form-control" id="desconto" name="desconto" value="<?php echo (isset($desconto) ? $desconto : ''); ?>" />
 			</div>
 			<div class="mb-3">
 				<label for="product_active" class="form-label">produto ativo?</label>
@@ -103,7 +108,7 @@
 				  <option value="0" <?php echo (isset($active) ? ($active == '0' ? 'selected' : '') : ''); ?>>Nao</option>
 				  <option value="1" <?php echo (isset($active) ? ($active == '1' ? 'selected' : '') : ''); ?>>Sim</option>
 				</select>
-			</div>  
+			</div>
 			<br>
 			<!--image preview-->
 			<div class="user-image mb-3 text-center">
@@ -121,9 +126,8 @@
 			</button>
 		</form>
 	  </div>
-	</main>    
-	<!-- jQuery -->
+	</main>
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-	<script src="../../frontoffice/utils/image_preview.js"></script>
+	<script src="../../frontoffice/scripts/image_preview.js"></script>
   </body>
 </html>

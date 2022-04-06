@@ -35,9 +35,10 @@
 					<thead>
 						<tr>
 							<th scope="col">ID_Produto</th>
-							<th scope="col">Tipo</th>
+							<!--<th scope="col">Tipo</th>-->
 							<th scope="col">Nome</th>
 							<th scope="col">Descricao</th>
+							<th scope="col">Ingredientes</th>
 							<th scope="col">Preco</th>
 							<th scope="col">promocao</th>
 							<th scope="col">Desconto</th>
@@ -63,10 +64,12 @@
 								while($row = mysqli_fetch_array($result)){
 									echo "<tr>";
 										echo "<td>".$row["ID_Produto"]."</td>";
-										echo "<td>".$row["Tipo_Produto"]."</td>";
+										//echo "<td>".$row["Tipo_Produto"]."</td>";
 										echo "<td>".$row["Nome_Produto"]."</td>";
 										echo "<td>".$row["Descricao_Produto"]."</td>";
-										echo "<td>".$row["Preco_Produto"]."</td>";
+										echo "<td>".$row["Ingredientes"]."</td>";
+																							//dp(decimal places)
+										echo "<td>".number_format((float)$row["Preco_Produto"], 2 )."</td>";
 										echo "<td>",$row["Promocao"],"</td>";
 										echo "<td>".$row["Desconto"]."</td>";
 										echo "<td>".$row["Imagem"]."</td>";

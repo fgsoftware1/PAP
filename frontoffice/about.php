@@ -1,8 +1,8 @@
 <?php 
 	include("./header/header.php"); 
 ?>
-<div class="main">
-   	<div class="about-top">
+<div class="total">
+   	<div class="wrap">
 		<div class="col span_1_of_about">
 			<?php
 				$resultado = executarSQL("SELECT n.*, tn.* FROM noticias n, tipo_noticia tn WHERE n.ID_tipo_Noticia = tn.ID_tipo_Noticia AND n.ID_tipo_Noticia = 8 ");
@@ -31,7 +31,9 @@
 				if($result = executarSQL($consulta)){
 					while($row = mysqli_fetch_array($result)){
 						echo "<div class='col_1_of_3 span_1_of_3'>";
-						echo "<img src='../".$row["Imagem"]."' alt='' height='250' width='475'/>";
+						echo "<a href='./single_products.php?ID=".$row["ID_Produto"]."'>";
+							echo "<img src='../".$row["Imagem"]."' alt='' height='250' width='475'/>";
+						echo "</a>";
 						echo "<div class='texto_news'>";
 							echo "<div class='bottom-head'>";
 								echo "<h5>".$row["Nome_Produto"]."</h5>";
