@@ -14,7 +14,8 @@
 	if (move_uploaded_file($_FILES["fileUpload"]["tmp_name"],  "../../".$filename)) {
         try{
             executarSQL("INSERT INTO produtos (Tipo_Produto, Nome_Produto, Descricao_Produto, Ingredientes, Preco_Produto, Promocao, Desconto, Imagem, Ativo)
-                        VALUES(".$product_type.", '".$nome."', '".$descricao."', '".$ingredientes."', ".$preco.", ".$promocao.", ".$desconto.", '".$filename."', ".$product_active.")");
+                        VALUES(".$product_type.", '".$nome."', '".$descricao."', '".$ingredientes."', ".$preco.", ".$promocao.",
+								".$desconto.", '".$filename."', ".$product_active.")");
 
             header("Location: ./list_products.php");
         }catch(Exception $e){
