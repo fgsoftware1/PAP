@@ -47,10 +47,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     ?>
     <div class="total">
         <div class="wrap">
-            <div class="header">
+        <div class="header">
+                <div class="clear"></div>
                 <div class="header-bot">
                     <div class="logo">
-                        <a href="products.php"><img src="images/logo.png" alt="" /></a>
+                        <a href="events.php"><img src="images/logo.png" alt="" /></a>
                     </div>
                     <div class="header_top_right">
                         <ul>
@@ -60,6 +61,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <div class="clear"></div>
                 </div>
                 <div class="clear"></div>
+            </div>
+            <div class="menu">
+                <div class="top-nav">
+                    <ul>
+                        <li class="active"><a href="index.php">Inicio</a></li>
+                        <li><a href="about.php">Sobre</a></li>
+                        <li><a href="products.php">Produtos</a></li>
+                        <li><a href="pricing.php">Preço</a></li>
+                        <li><a href="booking.php">Reserva</a></li>
+                        <li><a href="events.php">Eventos</a></li>
+                        <li><a href="contact.php">Contatos</a></li>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
             </div>
         <div class="main">
             <div class="container-flex">
