@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     </div>
                     <div class="header_top_right">
                         <ul>
-                            <li><a href=".7login.php">Login</a></li>
+                            <li><a href="./login.php">Login</a></li>
                         </ul>
                     </div>
                     <div class="clear"></div>
