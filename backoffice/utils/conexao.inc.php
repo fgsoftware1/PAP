@@ -9,6 +9,7 @@
 
         try{
             $conn = mysqli_connect($servername, $username, $password, $database);
+			mysqli_set_charset($conn, "utf8");
         }
         catch(mysqli_sql_exception $mensagem) {
             echo nl2br("Erro: Não foi possivel conectar ao MySQL".$mensagem);

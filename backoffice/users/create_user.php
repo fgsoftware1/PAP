@@ -20,7 +20,7 @@
     $title_page = "Alterar utilizador";
   }
 ?>
-<html> 
+<html>
     <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -94,15 +94,15 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputAtivo" class="form-label">utilizador ativo?</label>
-								<select class="form-select" id="user_active" name="user_active">
+				<select class="form-select" id="user_active" name="user_active">
                   <option value="0" <?php echo (isset($active) ? ($active == '0' ? 'selected' : '') : ''); ?>>Nao</option>
                   <option value="1" <?php echo (isset($active) ? ($active == '1' ? 'selected' : '') : ''); ?>>Sim</option>
                 </select>
-            </div>  
+            </div>
             <br>
             <button type="submit" class="btn btn-primary"><?php echo $nome_botao ?></button>
         </form>
       </div>
-    </main>       
+    </main>
   </body>
 </html>
