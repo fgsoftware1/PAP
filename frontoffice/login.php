@@ -19,14 +19,14 @@
 						</div>
 						<p>
 						<div>
-						   	<button class="btn1 btn-8 btn-8a">Submeter</button>
+							<input type="submit" class="btn1 btn-8 btn-8a" name="login" value="submeter">
 						</div>
 					</form>
 				</div>
 			<div class="col_1_of_2 span_1_of_2">
 				<h2> Registar</h2>
 
-				<form action="scripts/script_signup.php" onsubmitmethod="POST">
+				<form action="scripts/script_signup.php" method="POST">
 					<div>
 						<span><label>Nome</label></span>
 						<span><input name="nome" type="text" class="form-control"></span>
@@ -45,7 +45,7 @@
 					</div>
 					<p>
 					<div>
-						<button class="btn1 btn-8 btn-8a" name="login">Submeter</button>
+						<input type="submit" class="btn1 btn-8 btn-8a" name="login" value="submeter">
 					</div>
 				</form>
 			</div>
