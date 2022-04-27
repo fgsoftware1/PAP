@@ -8,7 +8,7 @@
 		$pass = $_POST["pass"];
 
 		try{
-			$query = executarSQL("SELECT * FROM utilizadores WHERE Email = ".$email."");
+			$query = executarSQL("SELECT * FROM utilizadores WHERE Email = '".$email."'");
 			$row = mysqli_fetch_array($query);
 
 			if(password_verify($pass, $row["Pass"]) && mysqli_num_rows($query) == 1){
