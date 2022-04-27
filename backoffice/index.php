@@ -1,3 +1,3 @@
 <?php
-	header("Location: ./news/list_news.php");
+	header("Location: ./users/list_users.php");
 ?>
