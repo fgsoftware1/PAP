@@ -14,7 +14,7 @@
 			if(password_verify($pass, $row["Pass"]) && mysqli_num_rows($query) == 1){
 				$_SESSION['email'] = $email;
 
-				if($email = "admin@spicyfoods.pt"){
+				if($email == "admin@spicyfoods.pt"){
 					header("Location: ../../backoffice/index.php");
 				}else{
 					header("Location: ../index.php");
