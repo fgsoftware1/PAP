@@ -6,7 +6,7 @@
 		<div class="col span_2_of_3">
 			<div class="content-last">
 				<div class="col_1_of_2 span_1_of_2">
-					<h2> Login</h2>
+					<h2>Iniciar sessão</h2>
 
 					<form name="f1" action="scripts/script_signin.php" onsubmit="validate()" method="POST">
 						<div>
