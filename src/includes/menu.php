@@ -1,6 +1,6 @@
 <ul class="flex">
     <li class="px-6">
-        <a href="./index.php" class="text-white font-bold align-middle">
+        <a href="#inicio" class="text-white font-bold align-middle sticky top-0">
             <span class="material-symbols-sharp align-middle">
             home
             </span>

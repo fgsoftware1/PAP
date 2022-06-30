@@ -1,2 +1,2 @@
-<div class="w-full h-32 bg-[url('../res/img/bg.jpg')]">
+<div class="w-full h-32 bg-gray-500 flex">
 </div>
