@@ -32,11 +32,11 @@
         </a>
     </li>
 </ul>
-<span>
+<div>
     <a href="#">
         <span class="material-symbols-sharp align-middle">
             login
         </span>
         login
     </a>
-</span>
+</div>
