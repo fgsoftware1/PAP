@@ -13,14 +13,21 @@
 <body>
     <div class="container mx-auto">
         <div class="w-full h-32 bg-blue-600 flex"></div>
-        <div class="w-full h-screen bg-gray-600 p-2" id="menu">
-            <div class="w-40 bg-gray-600 rounded-full cursor-pointer" id="botao">
-                <div class="h-1 w-8 bg-white"></div>
-                <div class="h-1 w-8 bg-white mt-2"></div>
-                <div class="h-1 w-8 bg-white mt-2"></div>
+        <div class="w-full h-screen bg-lime-500 p-2" id="menu">
+            <div class="space-y-2 cursor-pointer" id="botao">
+                <span class="block w-8 h-1 bg-gray-600"></span>
+                <span class="block w-8 h-1 bg-gray-600"></span>
+                <span class="block w-8 h-1 bg-gray-600"></span>
             </div>
             <ul class="pt-4" id="opcoes">
-                <li class="text-white font-bold hover:bg-gray-200"><a href="#"></a></li>
+                <li class="text-white font-bold hover:bg-gray-200">
+                    <a href="#">
+                        <span class="material-symbols-sharp align-middle">
+                        home
+                        </span>
+                        inicio
+                    </a>
+                </li>
                 <li class="text-white font-bold hover:bg-gray-200"><a href="#"></a></li>
                 <li class="text-white font-bold hover:bg-gray-200"><a href="#"></a></li>
             </ul>

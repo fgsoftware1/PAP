@@ -9,19 +9,21 @@
     <link rel="stylesheet" href="../dist/output.css">
 </head>
 <body>
-    <div class="container mx-auto h-screen">
-        <div class="h-1/3">
-            <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Iniciar sessão</h2>
-            </p>
-        </div>
-        <div class="h-2/3">
-            <span class="material-symbols-sharp content-center w-10 h-10">
-                person
-            </span>
-            <form class="mt-8 space-y-6" method="POST">
-                <span class="block text-sm font-medium text-slate-700">Email</span>
-                <input type="email" class="mt-1 block w-full px-3 py-2 "/>
-            </form>
+    <div class="mx-auto">
+        <div class="bg-zinc-600">
+            <div class="h-1/3">
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Iniciar sessão</h2>
+                </p>
+            </div>
+            <div class="h-2/3">
+                <span class="material-symbols-sharp content-center w-20 h-20">
+                    person
+                </span>
+                <form class="mt-8 space-y-6" method="POST">
+                    <span class="block text-sm font-medium text-black">Email</span>
+                    <input type="email" class="mt-1 block w-full px-3 py-2 "/>
+                </form>
+            </div>
         </div>
     </div>
 </body>
