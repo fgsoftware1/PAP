@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="container mx-auto">
+    <div class="mx-auto">
         <?php 
             include "./includes/header.php"
         ?>
@@ -27,7 +27,7 @@
             <a name="inicio"></a>
             content
         </div>
-        
+
             <?php 
                 include "./includes/footer.php"
             ?>

@@ -4,6 +4,6 @@ const opcoes = document.querySelector("#opcoes");
 
 botao.addEventListener("click", () => {
     menu.classList.toggle("w-14");
-    opcoes.classList.toggle("");
+    opcoes.classList.toggle("hidden");
     
 });

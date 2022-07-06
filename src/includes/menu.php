@@ -35,7 +35,7 @@
             </li>
         </ul>
     </div>
-    <div>
+    <div class="pr-2">
         <a href="./login.php">
             <span class="material-symbols-sharp align-middle">
                 login
