@@ -50,16 +50,22 @@
 				</div>
 			</div>
 			<div class="w-1/3 max-w-sm rounded overflow-hidden shadow-2xl bg-cor7">
-				<img class="w-auto h-auto" src="../res/img/alex_atala.webp" alt="Alex Atala">
+				<img class="w-auto h-fit" src="../res/img/alex_atala.webp" alt="Alex Atala">
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">Alex Atala</div>
 					<p class="text-gray-700 ">
-						Formou-se na Escola de Hotelaria e Turismo de Coimbra, em Coimbra. Depois de passagens em grandes cozinhas de Espanha como o Restaurante Dos Cielos dos Hermanos Torres em Barcelona (1*Michelin), Restaurant Monvinic em Barcelona, Restaurante Cinc Sentits em Barcelona(1*Michelin) regressou a Portugal em finais de 2016 e motivado pelas suas viagens e vivências, abre o seu primeiro restaurante de cozinha de autor, no Porto.
+
 					</p>
 				</div>
 			</div>
-			<div class="w-1/3">
+			<div class="w-1/3 max-w-sm rounded overflow-hidden shadow-2xl bg-cor7">
+				<img class="w-auto h-fit" src="../res/img/henrique_fogaca.webp" alt="Henrique Fogaça">
+				<div class="px-6 py-4">
+					<div class="font-bold text-xl mb-2">Henrique Fogaça</div>
+					<p class="text-gray-700 ">
 
+					</p>
+				</div>
 			</div>
 		</section>
 

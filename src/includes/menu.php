@@ -2,7 +2,7 @@
     <div>
         <ul class="flex flex-col md:flex-row">
             <li class="px-6">
-                <a href="#inicio" class="text-white font-bold align-middle hover:bg-blue-700">
+                <a href="#inicio" class="text-white font-bold align-middle hover:bg-cor6">
                     <span class="material-symbols-sharp align-middle">
                     home
                     </span>
@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="#ementas" class="text-white font-bold align-middle hover:bg-blue-700">
+                <a href="#ementas" class="text-white font-bold align-middle hover:bg-cor6">
                     <span class="material-symbols-sharp align-middle">
                     restaurant
                     </span>
@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="#reservar" class="text-white font-bold hover:bg-blue-700">
+                <a href="#reservar" class="text-white font-bold hover:bg-cor6">
                     <span class="material-symbols-sharp align-middle">
                     room_service
                     </span>
@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="#equipa" class="text-white font-bold hover:bg-blue-700">
+                <a href="#equipa" class="text-white font-bold hover:bg-cor6">
                     <span class="material-symbols-sharp align-middle">
                     info
                     </span>
@@ -36,7 +36,7 @@
         </ul>
     </div>
     <div class="pr-2">
-        <a href="./login.php" class="hover:bg-blue-700">
+        <a href="./login.php" class="hover:bg-cor6">
             <span class="material-symbols-sharp align-middle">
                 login
             </span>
