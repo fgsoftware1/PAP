@@ -33,6 +33,14 @@
                     Equipa
                 </a>
             </li>
+            <li class="px-6">
+                <a href="#contato" class="text-white font-bold hover:bg-cor6">
+                    <span class="material-symbols-sharp align-middle">
+                    contacts
+                    </span>
+                    contato
+                </a>
+            </li>
         </ul>
     </div>
     <div class="pr-2">

@@ -38,10 +38,11 @@
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur possimus aut repudiandae esse reprehenderit, beatae, dolore distinctio minus similique eligendi necessitatibus impedit atque perferendis. Inventore ducimus nesciunt eligendi repellat.
 		</section>
 		<a name="equipa">
-		<section class="flex w-full h-auto bg-cor3">
-			<h1 class="font-medium font-gulzar">Equipa</h1>
-			<div class="w-1/3 h-fit max-w-sm rounded overflow-hidden shadow-2xl bg-cor7">
-				<img class="w-auto h-auto" src="../res/img/joao_cura.webp" alt="João Cura">
+		<section class="flex flex-wrap justify-around w-full h-screen bg-cor3 items-center">
+			<div class="w-96 pb-5 rounded-2xl shadow-2xl bg-cor7 flex flex-col">
+				<div class="flex justify-center pt-6">
+					<img class="rounded-full w-36" src="../res/img/joao_cura.png" alt="João Cura">
+				</div>
 				<div class="px-6 py-4">
 					<div class="font-bold text-xl mb-2">João Cura</div>
 					<p class="text-gray-700">
@@ -49,25 +50,55 @@
 					</p>
 				</div>
 			</div>
-			<div class="w-1/3 max-w-sm rounded overflow-hidden shadow-2xl bg-cor7">
-				<img class="w-auto h-fit" src="../res/img/alex_atala.webp" alt="Alex Atala">
+			<div class="w-96 pb-5 rounded-2xl shadow-2xl bg-cor7 flex flex-col">
+				<div class="flex justify-center pt-6">
+					<img class="rounded-full w-36" src="../res/img/henrique_fogaca.png" alt="João Cura">
+				</div>
 				<div class="px-6 py-4">
-					<div class="font-bold text-xl mb-2">Alex Atala</div>
-					<p class="text-gray-700 ">
-
+					<div class="font-bold text-xl mb-2">Henrique Fogaça</div>
+					<p class="text-gray-700">
+						Formou-se na Escola de Hotelaria e Turismo de Coimbra, em Coimbra. Depois de passagens em grandes cozinhas de Espanha como o Restaurante Dos Cielos dos Hermanos Torres em Barcelona (1*Michelin), Restaurant Monvinic em Barcelona, Restaurante Cinc Sentits em Barcelona(1*Michelin) regressou a Portugal em finais de 2016 e motivado pelas suas viagens e vivências, abre o seu primeiro restaurante de cozinha de autor, no Porto.
 					</p>
 				</div>
 			</div>
-			<div class="w-1/3 max-w-sm rounded overflow-hidden shadow-2xl bg-cor7">
-				<img class="w-auto h-fit" src="../res/img/henrique_fogaca.webp" alt="Henrique Fogaça">
+			<div class="w-96 pb-5 rounded-2xl shadow-2xl bg-cor7 flex flex-col">
+				<div class="flex justify-center pt-6">
+					<img class="rounded-full w-36" src="../res/img/joao_cura.png" alt="João Cura">
+				</div>
 				<div class="px-6 py-4">
-					<div class="font-bold text-xl mb-2">Henrique Fogaça</div>
-					<p class="text-gray-700 ">
-
+					<div class="font-bold text-xl mb-2">João Cura</div>
+					<p class="text-gray-700">
+						Formou-se na Escola de Hotelaria e Turismo de Coimbra, em Coimbra. Depois de passagens em grandes cozinhas de Espanha como o Restaurante Dos Cielos dos Hermanos Torres em Barcelona (1*Michelin), Restaurant Monvinic em Barcelona, Restaurante Cinc Sentits em Barcelona(1*Michelin) regressou a Portugal em finais de 2016 e motivado pelas suas viagens e vivências, abre o seu primeiro restaurante de cozinha de autor, no Porto.
 					</p>
 				</div>
 			</div>
 		</section>
+        <a name="contato">
+		<section class="flex flex-wrap justify-around w-full h-screen bg-cor7 items-center">
+            <form>
+                <div class="mb-4">
+                    <label class="flex text-sm font-medium text-white">Nome</label>
+                    <input type="text" class="w-80 border-2 border-gray text-sm rounded-lg " placeholder="nome" required>
+                </div>
+                <div class="mb-4">
+                    <label class="flex text-sm font-medium text-white">Email</label>
+                    <input type="email" class="w-80 border-2 border-gray text-sm rounded-lg " placeholder="email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="flex text-sm font-medium text-white">Mensagem</label>
+                    <textarea type="text" rows="5" cols="30" placeholder="mensagem" required></textarea>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button class="bg-cor3 hover:bg-cor7 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Cancelar
+                    </button>
+                    <button class="bg-cor4 hover:bg-cor7 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Submeter
+                    </button>
+                </div>
+            </form>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d85328.07430872599!2d-7.957523849070762!3d40.63373939024881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23370fdf817c41%3A0x21a500bea26165af!2sPal%C3%A1cio%20do%20Gelo!5e0!3m2!1sen!2spt!4v1657208304362!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
 
 		<?php
 		include "./includes/footer.php"

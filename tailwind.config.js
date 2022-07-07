@@ -12,6 +12,8 @@ module.exports = {
 		'cor5': '#6B4AE0',
 		'cor6': '#0000FF',
 		'cor7': '#FFFFFF',
+        'red': '#FF0000',
+        'gray': '#D3D3D3',
 	},
 	fontFamily: {
 		'gulzar': ['Gulzar', 'serif'],
