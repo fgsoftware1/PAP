@@ -1,8 +1,8 @@
-<div class="w-full md:h-10 sm:h-24 bg-lime-400 flex justify-between pr-2 sticky top-0">
+<div class="w-full md:h-10 h-28 bg-blue-900 flex justify-between pr-2 sticky top-0">
     <div>
-        <ul class="flex">
+        <ul class="flex flex-col md:flex-row">
             <li class="px-6">
-                <a href="#inicio" class="text-white font-bold align-middle sticky top-0">
+                <a href="#inicio" class="text-white font-bold align-middle hover:bg-blue-700">
                     <span class="material-symbols-sharp align-middle">
                     home
                     </span>
@@ -10,7 +10,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="" class="text-white font-bold align-middle">
+                <a href="#ementas" class="text-white font-bold align-middle hover:bg-blue-700">
                     <span class="material-symbols-sharp align-middle">
                     restaurant
                     </span>
@@ -18,7 +18,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="" class="text-white font-bold">
+                <a href="#reservar" class="text-white font-bold hover:bg-blue-700">
                     <span class="material-symbols-sharp align-middle">
                     room_service
                     </span>
@@ -26,7 +26,7 @@
                 </a>
             </li>
             <li class="px-6">
-                <a href="" class="text-white font-bold">
+                <a href="#sobre" class="text-white font-bold hover:bg-blue-700">
                     <span class="material-symbols-sharp align-middle">
                     info
                     </span>
@@ -36,7 +36,7 @@
         </ul>
     </div>
     <div class="pr-2">
-        <a href="./login.php">
+        <a href="./login.php" class="hover:bg-blue-700">
             <span class="material-symbols-sharp align-middle">
                 login
             </span>

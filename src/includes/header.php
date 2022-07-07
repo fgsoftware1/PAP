@@ -1,3 +1,6 @@
-<div class="w-full h-32 bg-yellow-500 flex">
-    <img src="../../res/img/favicon-32x32.png">
+<div class="w-full flex h-32 bg-black">
+    <div class="flex pt-5">
+        <img src="./../res/img/logo.png" class="h-32 pb-2">
+    </div>
+    <h1 class="text-white italic font-normal pt-24">Spicyfoods</h1>
 </div>

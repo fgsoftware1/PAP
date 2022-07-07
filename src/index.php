@@ -16,6 +16,7 @@
 <body>
     <div class="mx-auto">
         <?php 
+            "<a name='top'>";
             include "./includes/header.php"
         ?>
         
@@ -23,17 +24,29 @@
             include "./includes/menu.php"
         ?>
 
-        <div class="w-full h-screen bg-emerald-600">
-            <a name="inicio"></a>
+        <a name="inicio">
+        <section class="bg-gray-400 h-screen">
             content
-        </div>
+        </section>
+        <a name="ementas">
+        <section class="bg-gray-500 h-screen">
+            content
+        </section>
+        <a name="reservar">
+        <section class="bg-gray-600 h-screen">
+            content
+        </section>
+        <a name="sobre">
+        <section class="bg-gray-700 h-screen">
+            content
+        </section>
 
-            <?php 
-                include "./includes/footer.php"
-            ?>
+        <?php 
+            include "./includes/footer.php"
+        ?>
 
-        <button title="top" class="fixed z-90 bottom-10 right-8 bg-blue-600 w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center text-white text-4xl hover:bg-blue-600 hover:drop-shadow-2xl">
-            <a href="#inicio" class="text-white font-bold align-middle sticky">
+        <button class="fixed z-90 bottom-10 right-8 bg-blue-600 w-12 h-12 rounded-md drop-shadow-lg flex justify-center items-center text-black text-4xl hover:text-white hover:drop-shadow-2xl">
+            <a href="#top" class="font-bold align-middle sticky">
                 <span class="material-symbols-sharp">
                 arrow_upward
                 </span>
