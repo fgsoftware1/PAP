@@ -1,4 +1,4 @@
-<div class="flex flex-row w-full h-auto bg-gray-600">
+<div class="flex flex-row w-full h-auto bg-cor5">
     <div class="w-1/3 pl-8">
         <h1 class="uppercase">Privacidade</h1>
         <ul class="font-light">

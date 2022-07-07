@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	:root {
+	  --color-um: 255 115 179;
+	  --color-dois: 111 114 185;
+	}
+  }

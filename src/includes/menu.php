@@ -1,4 +1,4 @@
-<div class="w-full md:h-10 h-28 bg-blue-900 flex justify-between pr-2 sticky top-0">
+<div class="w-full md:h-10 h-28 bg-cor2 flex justify-between pr-2 sticky top-0 pt-2">
     <div>
         <ul class="flex flex-col md:flex-row">
             <li class="px-6">
@@ -22,15 +22,15 @@
                     <span class="material-symbols-sharp align-middle">
                     room_service
                     </span>
-                    Reservar
+                    Reservas
                 </a>
             </li>
             <li class="px-6">
-                <a href="#sobre" class="text-white font-bold hover:bg-blue-700">
+                <a href="#equipa" class="text-white font-bold hover:bg-blue-700">
                     <span class="material-symbols-sharp align-middle">
                     info
                     </span>
-                    Sobre
+                    Equipa
                 </a>
             </li>
         </ul>
