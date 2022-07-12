@@ -65,8 +65,13 @@
                         </div>
                         <div class="pl-8">
                             <div class="mb-8">
-                                <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
-                                <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                            <p class="text-base pr-96">
+                                    Sopa:
+                                    <br>
+                                    Prato:
+                                    <br>
+                                    Sobremesa:
+                                </p>
                             </div>
                             <div class="flex items-center">
                                 <span class="material-symbols-sharp font-medium">
@@ -85,8 +90,13 @@
                         </div>
                         <div class="pl-8">
                             <div class="mb-8">
-                                <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
-                                <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                            <p class="text-base pr-96">
+                                    Sopa:
+                                    <br>
+                                    Prato:
+                                    <br>
+                                    Sobremesa:
+                                </p>
                             </div>
                             <div class="flex items-center">
                                 <span class="material-symbols-sharp font-medium">
@@ -101,7 +111,7 @@
                     </div>
                 </div>
             </div>
-            <div class="w-1/2 pl-4">
+            <div class="w-1/2 pl-4 h-96">
                 <img src="../res/img/feast.jpg" class="h-48">
             </div>
         </section>
