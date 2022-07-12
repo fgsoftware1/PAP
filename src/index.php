@@ -32,9 +32,34 @@
         <!--secção ementas-->
         <a name="ementas">
         <section class="flex flex-wrap w-full h-fit bg-cor4 p-10">
-            <div class="flex w-1/2">
+            <div class="w-1/2">
                 <div class="flex flex-col">
-                    <div class="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
+                    <div class="border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
+                        <div class="w-48 flex bg-cover text-center">
+                            <img src="../res/img/arroz_de_salpicao.jpg" alt="">
+                        </div>
+                        <div class="pl-8">
+                            <div class="mb-8">
+                                <p class="text-base pr-96">
+                                    Sopa:
+                                    <br>
+                                    Prato:
+                                    <br>
+                                    Sobremesa:
+                                </p>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-symbols-sharp font-medium">
+                                    event
+                                </span>
+                                <div class="text-sm">
+                                    <p class="text-gray-900 leading-none">Jonathan Reinink</p>
+                                    <p class="text-gray-600">Aug 18</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-2 border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
                         <div class="w-48 flex bg-cover text-center">
                             <img src="../res/img/arroz_de_salpicao.jpg" alt="">
                         </div>
@@ -54,27 +79,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-2 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
-                        <div class="w-48 flex bg-cover text-center">
-                            <img src="../res/img/arroz_de_salpicao.jpg" alt="">
-                        </div>
-                        <div class="pl-8">
-                            <div class="mb-8">
-                                <div class="text-gray-900 font-bold text-xl mb-2">Can coffee make you a better developer?</div>
-                                <p class="text-gray-700 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
-                            </div>
-                            <div class="flex items-center">
-                                <span class="material-symbols-sharp font-medium">
-                                    event
-                                </span>
-                                <div class="text-sm">
-                                    <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-                                    <p class="text-gray-600">Aug 18</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-2 border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
+                    <div class="mt-2 border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
                         <div class="w-48 flex bg-cover text-center">
                             <img src="../res/img/arroz_de_salpicao.jpg" alt="">
                         </div>
@@ -96,8 +101,8 @@
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center items-center w-1/2">
-                <img src="../res/img/feast.jpg" alt="arroz de salpicão">
+            <div class="w-1/2 pl-4">
+                <img src="../res/img/feast.jpg" class="h-48">
             </div>
         </section>
         <!--secção reservar-->
