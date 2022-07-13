@@ -22,7 +22,7 @@
                     <span class="material-symbols-sharp align-middle">
                     room_service
                     </span>
-                    Reservas
+                    Reservar
                 </a>
             </li>
             <li class="px-6">

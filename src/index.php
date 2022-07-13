@@ -36,16 +36,16 @@
                 <div class="flex flex-col">
                     <div class="border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
                         <div class="w-48 flex bg-cover text-center">
-                            <img src="../res/img/arroz_de_salpicao.jpg" alt="">
+                            <img src="../res/img/esparguete-bolonhesa.jpg" class="rounded-xl">
                         </div>
                         <div class="pl-8">
                             <div class="mb-8">
-                                <p class="text-base pr-96">
-                                    Sopa:
+                                <p class="text-base pr-96 w-96">
+                                    <strong>Sopa</strong>:&nbsp;espinafres
                                     <br>
-                                    Prato:
+                                    <strong>Prato</strong>:&nbsp;esparguete&nbsp;à&nbsp;bolonhesa
                                     <br>
-                                    Sobremesa:
+                                    <strong>Sobremesa</strong>:&nbsp;fruta&nbsp;da&nbsp;época
                                 </p>
                             </div>
                             <div class="flex items-center">
@@ -53,24 +53,30 @@
                                     event
                                 </span>
                                 <div class="text-sm">
-                                    <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-                                    <p class="text-gray-600">Aug 18</p>
+                                    <p>Jul 12</p>
+                                    <p>almoço</p>
+                                </div>
+                                <span class="material-symbols-sharp font-medium pl-8">
+                                    schedule
+                                </span>
+                                <div class="text-sm">
+                                    <p>9:00-13:00</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-2 border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
                         <div class="w-48 flex bg-cover text-center">
-                            <img src="../res/img/arroz_de_salpicao.jpg" alt="">
+                            <img src="../res/img/canja-galinha.webp">
                         </div>
                         <div class="pl-8">
                             <div class="mb-8">
-                            <p class="text-base pr-96">
-                                    Sopa:
+                                <p class="text-base pr-96 w-96">
+                                    Sopa:&nbsp;canja&nbsp;de&nbsp;galinha
                                     <br>
-                                    Prato:
+                                    Prato:&nbsp;douradinhos&nbsp;de&nbsp;peixe&nbsp;no&nbsp;forno&nbsp;com&nbsp;arroz
                                     <br>
-                                    Sobremesa:
+                                    Sobremesa:&nbsp;doce&nbsp;da&nbsp;casa
                                 </p>
                             </div>
                             <div class="flex items-center">
@@ -78,24 +84,30 @@
                                     event
                                 </span>
                                 <div class="text-sm">
-                                    <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-                                    <p class="text-gray-600">Aug 18</p>
+                                    <p>Jul 12</p>
+                                    <p>jantar</p>
+                                </div>
+                                <span class="material-symbols-sharp font-medium pl-8">
+                                    schedule
+                                </span>
+                                <div class="text-sm">
+                                    <p>15:30-21:00</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="mt-2 border-r border-b border-l lg:border-l-0 lg:border-t bg-cor7 rounded-b lg:rounded-b-none lg:rounded-r p-4 flex justify-between leading-normal">
                         <div class="w-48 flex bg-cover text-center">
-                            <img src="../res/img/arroz_de_salpicao.jpg" alt="">
+                            <img src="../res/img/fusilli-com-frango.jpg">
                         </div>
                         <div class="pl-8">
                             <div class="mb-8">
-                            <p class="text-base pr-96">
-                                    Sopa:
+                            <p class="text-base pr-96 w-96">
+                                    Sopa:&nbsp;alho&nbsp;francês
                                     <br>
-                                    Prato:
+                                    Prato:&nbsp;massa&nbsp;fusilli&nbsp;com&nbsp;frango
                                     <br>
-                                    Sobremesa:
+                                    Sobremesa:&nbsp;molotoff
                                 </p>
                             </div>
                             <div class="flex items-center">
@@ -103,22 +115,79 @@
                                     event
                                 </span>
                                 <div class="text-sm">
-                                    <p class="text-gray-900 leading-none">Jonathan Reinink</p>
-                                    <p class="text-gray-600">Aug 18</p>
+                                    <p>Jul 13</p>
+                                    <p>almoço</p>
+                                </div>
+                                <span class="material-symbols-sharp font-medium pl-8">
+                                    schedule
+                                </span>
+                                <div class="text-sm">
+                                    <p>9:00-13:00</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="w-1/2 pl-4 h-96">
-                <img src="../res/img/feast.jpg" class="h-48">
+            <div class="w-1/2 pl-4 flex justify-center">
+                <img src="../res/img/feast.jpg" class="w-96 rounded-3xl">
             </div>
         </section>
         <!--secção reservar-->
         <a name="reservar">
         <section class="bg-white h-screen">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel consectetur possimus aut repudiandae esse reprehenderit, beatae, dolore distinctio minus similique eligendi necessitatibus impedit atque perferendis. Inventore ducimus nesciunt eligendi repellat.
+            <p class="text-2xl text-center font-medium pt-5">Reserve já!</p>
+            <div class="flex flex-wrap w-full h-screen bg-cor7 items-center">
+                <div class="w-1/2">
+                    <form class="w-full">
+                        <div class="flex flex-wrap mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="text-sm font-bold mb-2">
+                                    Nome
+                                </label>
+                                <input class="w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="nome" required>
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="text-sm font-bold mb-2">
+                                    Sobrenome
+                                </label>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="sobrenome" required>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap mx-3 mb-6">
+                            <div class="px-3 w-full">
+                                <label class="text-sm font-bold mb-2">
+                                    Email
+                                </label>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="email" placeholder="email" required>
+                            </div>
+                            <div class="px-3 w-full">
+                                <label class="text-sm font-bold mb-2">
+                                    Telefone
+                                </label>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="tel" placeholder="telefone" required>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap mx-3 mb-6">
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="text-sm font-bold mb-2">
+                                    Data
+                                </label>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="date">
+                            </div>
+                            <div class="w-full md:w-1/2 px-3">
+                                <label class="text-sm font-bold mb-2">
+                                    Hora
+                                </label>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="time">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="w-1/2 flex justify-center">
+                    <img src="../res/img/restaurante-reserva.jpg" class="w-fit rounded-3xl">
+                </div>
+            </div>
         </section>
         <!--secção equipa-->
         <a name="equipa">
@@ -190,7 +259,7 @@
         ?>
 
         <button class="fixed z-90 bottom-10 right-8 bg-cor6 w-12 h-12 rounded-md drop-shadow-lg flex justify-center items-center text-black text-4xl hover:text-white hover:drop-shadow-2xl">
-            <a href="#top" class="font-bold align-middle sticky">
+            <a href="#top" class="font-bold align-middle sticky w-12 h-12">
                 <span class="material-symbols-sharp">
                     arrow_upward
                 </span>
