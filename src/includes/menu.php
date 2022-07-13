@@ -1,4 +1,4 @@
-<div class="w-full md:h-10 h-28 bg-cor2 flex justify-between pr-2 sticky top-0 pt-2">
+<div class="w-full md:h-10 h-28 bg-cor2 flex justify-between pr-2 sticky top-0 pt-2 text-lg">
     <div>
         <ul class="flex flex-col md:flex-row">
             <li class="px-6">

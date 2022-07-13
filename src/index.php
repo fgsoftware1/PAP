@@ -26,8 +26,21 @@
         ?>
         <!--secção inicio-->
         <a name="inicio">
-        <section class="bg-white h-screen">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore consectetur dolor ipsum reiciendis modi cupiditate dolorum iure. Quo, nemo. Hic soluta iure voluptatem dignissimos cum omnis, aperiam obcaecati corrupti fugit.
+        <section class="bg-white h-fit">
+            <div class="flex w-full h-screen">
+                <div class="w-1/2 flex justify-center items-end">
+                    <img src="../res/img/1.jpg">
+                </div>
+                <div class="w-1/2 pr-10 pt-5 flex justify-center items-center">
+                    <p class="text-3xl text-center italic">
+                    "A equipe da Spicyfoods garante pessoalmente a qualidade dos produtos ao construir relacionamentos com
+                    nossos fornecedores. Desde os agricultores aos mestres cervejeiros locais que cultivam cuidadosamente novos
+                    sabores, fazemos questão de aprender o máximo que pudermos sobre suas práticas e seu ofício.
+                    Dessa forma, sabemos que os produtos e pratos preparados que oferecemos não são apenas acessíveis, frescos
+                    e saudáveis, mas também refletem a riqueza desta região geográfica e da nossa comunidade."
+                    </p>
+                </div>
+            </div>
         </section>
         <!--secção ementas-->
         <a name="ementas">
@@ -130,7 +143,7 @@
                 </div>
             </div>
             <div class="w-1/2 pl-4 flex justify-center">
-                <img src="../res/img/feast.jpg" class="w-96 rounded-3xl">
+                <img src="../res/img/bg.webp" class="rounded-3xl">
             </div>
         </section>
         <!--secção reservar-->
@@ -142,13 +155,13 @@
                     <form class="w-full">
                         <div class="flex flex-wrap mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Nome
                                 </label>
                                 <input class="w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="nome" required>
                             </div>
                             <div class="w-full md:w-1/2 px-3">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Sobrenome
                                 </label>
                                 <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="sobrenome" required>
@@ -156,13 +169,13 @@
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
                             <div class="px-3 w-full">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Email
                                 </label>
                                 <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="email" placeholder="email" required>
                             </div>
                             <div class="px-3 w-full">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Telefone
                                 </label>
                                 <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="tel" placeholder="telefone" required>
@@ -170,13 +183,13 @@
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Data
                                 </label>
                                 <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="date">
                             </div>
                             <div class="w-full md:w-1/2 px-3">
-                                <label class="text-sm font-bold mb-2">
+                                <label class="text-xl font-bold mb-2">
                                     Hora
                                 </label>
                                 <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="time">

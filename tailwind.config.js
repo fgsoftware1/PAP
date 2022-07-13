@@ -15,6 +15,8 @@ module.exports = {
         'red': '#FF0000',
         'gray': '#D3D3D3',
         'dark-gray': '#A9A9A9',
+        'pink-400': '#ec407a',
+        'orange-500': '#ff9800',
 	},
 	fontFamily: {
 		'gulzar': ['Gulzar', 'serif'],
