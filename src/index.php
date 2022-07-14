@@ -158,13 +158,13 @@
                                 <label class="text-xl font-bold mb-2">
                                     Nome
                                 </label>
-                                <input class="w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="nome" required>
+                                <input class="w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="introduza o seu nome" required>
                             </div>
                             <div class="w-full md:w-1/2 px-3">
                                 <label class="text-xl font-bold mb-2">
                                     Sobrenome
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="sobrenome" required>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="introduza o seu sobrenome" required>
                             </div>
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
@@ -172,13 +172,13 @@
                                 <label class="text-xl font-bold mb-2">
                                     Email
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="email" placeholder="email" required>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="email" placeholder="introduza o seu email" required>
                             </div>
                             <div class="px-3 w-full">
                                 <label class="text-xl font-bold mb-2">
                                     Telefone
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="tel" placeholder="telefone" required>
+                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="tel" placeholder="introduza o seu telefone" required>
                             </div>
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
@@ -248,16 +248,16 @@
         <section class="flex flex-wrap justify-around w-full h-screen bg-cor7 items-center">
             <form method="POST" action="">
                 <div class="mb-4">
-                    <label class="flex text-sm font-medium text-white">Nome</label>
-                    <input type="text" max-lenght="80" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="nome" required>
+                    <label class="flex text-xl font-bold mb-2">Nome</label>
+                    <input type="text" max-lenght="80" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="introduza o seu nome" required>
                 </div>
                 <div class="mb-4">
-                    <label class="flex text-sm font-medium text-white">Email</label>
-                    <input type="email" max-lenght="100" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="email" required>
+                    <label class="flex text-xl font-bold mb-2">Email</label>
+                    <input type="email" max-lenght="100" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="introduza o seu email" required>
                 </div>
                 <div class="mb-4">
-                    <label class="flex text-sm font-medium text-white">Mensagem</label>
-                    <textarea type="text" rows="5" cols="30" max-lenght="2000" class="w-80 border-2 border-gray focus:outline-dark-gray" placeholder="mensagem" required></textarea>
+                    <label class="flex text-xl font-bold mb-2">Mensagem</label>
+                    <textarea type="text" rows="5" cols="30" max-lenght="2000" class="w-80 border-2 border-gray focus:outline-dark-gray" placeholder="corpo da mensagem" required></textarea>
                 </div>
                 <div class="flex items-center justify-between">
                     <input type="reset" value="cancelar" class="bg-cor3 hover:bg-cor7 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">

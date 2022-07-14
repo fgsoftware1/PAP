@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: ["./src/**/*.{html,js,php}"],
+  content: ["./src/**/*.{html,js,php}",
+  "./src/**/**/*.{html,js,php}"
+],
   theme: {
     extend: {},
 	colors: {
@@ -17,6 +19,18 @@ module.exports = {
         'dark-gray': '#A9A9A9',
         'pink-400': '#ec407a',
         'orange-500': '#ff9800',
+        'slate-900': '#0F172A',
+        'gray-50': '#F9FAFB',
+        'gray-300': '#D1D5DB',
+        'gray-900': '#111827',
+        'blue-500': '#2196f3',
+        'dark-gray-700': '#455a64',
+        'gray-600': '#757575',
+        'gray-400': '#bdbdbd',
+        'blue-900': '#0d47a1',
+        'red-800': '#c62828',
+        'gray-200': '#eeeeee',
+        'zinc-700': '#3f3f46',
 	},
 	fontFamily: {
 		'gulzar': ['Gulzar', 'serif'],
