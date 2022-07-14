@@ -1,3 +1,6 @@
+<?php
+    include '../include/db.php';
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -41,7 +44,14 @@
                     <tr class="bg-cor1 py-2"><th>Ementa</th><th>Data</th><th>Hora</th><th></th></tr>
                 </thead>
                 <tbody>
-                    <tr class="py-4 border-b-2"><td>1</td><td>14/07/2022</td><td>15:30</td><td><a href="update.php"><span class="material-symbols-sharp align-middle">edit</span></a><a href="delete.php"><span class="material-symbols-sharp align-middle ml-4">delete</span></a></td></tr>
+                    <?php
+                        $sql = "SELECT * FROM refeicoes";
+    	                $data = mysqli_query($conn, $sql);
+
+                        while($row = mysqli_fetch_array($data)){
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -50,3 +60,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

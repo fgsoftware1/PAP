@@ -49,7 +49,7 @@
     	                $data = mysqli_query($conn, $sql);
 
                         while($row = mysqli_fetch_array($data)){
-                            echo "<tr class='py-4 border-b-2'><td>Canja</td><td>arroz de camarão</td><td>pudim</td><td><a href='update.php'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
                         }
                     ?>
                 </tbody>

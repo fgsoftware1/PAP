@@ -1,3 +1,6 @@
+<?php
+    include '../include/db.php';
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -41,7 +44,14 @@
                     <tr class="bg-cor1 py-2"><th>Nome</th><th>Sobrenome</th><th>Email</th><th>Telefone</th><th>Data</th><th>Hora</th><th>confirmado</th><th></th></tr>
                 </thead>
                 <tbody>
-                    <tr class="py-4 border-b-2"><td>Gabriel</td><td>Aguiar</td><td>2009@epcarvalhais.org</td><td>912442666</td><td>14/07/2022</td><td>16:00</td><th>sim</th><td><a href="update.php"><span class="material-symbols-sharp align-middle">edit</span></a><a href="delete.php"><span class="material-symbols-sharp align-middle ml-4">delete</span></a></td></tr>
+                    <?php
+                        $sql = "SELECT * FROM reservas";
+    	                $data = mysqli_query($conn, $sql);
+
+                        while($row = mysqli_fetch_array($data)){
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><th>".$row[7]."</th><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>
@@ -50,3 +60,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>
