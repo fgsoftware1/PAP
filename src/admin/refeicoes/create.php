@@ -2,9 +2,9 @@
     include '../include/db.php';
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-        $ementa = $_POST['Ementa'];
-        $data = $_POST['Data'];
-        $hora = $_POST['Hora'];
+        $ementa = $_POST['ementa'];
+        $data = $_POST['data'];
+        $hora = $_POST['hora'];
 
         mysqli_query($conn, "INSERT INTO Refeicoes(Ementa, Data, Hora) values('".$ementa."', '".$data."', '".$hora."')");
         header('Location: ./home.php');
@@ -47,17 +47,23 @@
             <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Ementa</label>
-                    <select class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
-                        <option value="admin">1</option>
+                    <select name="ementa" id="ementa" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
+                        <?php
+                            $data = mysqli_query($conn, "SELECT * FROM ementas");
+
+                            while($row = mysqli_fetch_array($data)){
+                                echo "<option value='".$row[0]."'>".$row[2]."</option>";
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Data</label>
-                    <input type="date" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir data" required>
+                    <input type="date" name="data" id="data" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir data" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Hora</label>
-                    <input type="time" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir hora" required>
+                    <input type="time" name="hora" id="hora" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir hora" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
@@ -68,3 +74,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

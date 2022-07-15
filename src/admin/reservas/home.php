@@ -49,7 +49,9 @@
     	                $data = mysqli_query($conn, $sql);
 
                         while($row = mysqli_fetch_array($data)){
-                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><th>".$row[7]."</th><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                            $conf = "não";
+                            if($row[7] == 1)$conf = "sim";
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[5]."</td><td>".$row[6]."</td><th>".$conf."</th><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
                         }
                     ?>
                 </tbody>

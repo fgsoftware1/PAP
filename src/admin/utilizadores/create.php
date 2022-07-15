@@ -1,3 +1,18 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $tipo = $_POST['tipo'];
+        $nome = $_POST['nome'];
+        $telefone = $_POST['telefone'];
+        $email = $_POST['email'];
+        $passe = $_POST[sha1('passe')];
+        $ativo = $_POST['ativo'];
+
+        mysqli_query($conn, "INSERT INTO utilizadores(Tipo, Nome, Telefone, Email, Passe, Ativo) values('".$tipo."', '".$nome."', '".$telefone."', '".$email."', '".$passe."', '".$ativo."')");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -32,20 +47,26 @@
                 <div><h1 class="text-lg font-bold">Utilizadores>Adicionar</h1></div>
                 <div></div>
             </div>
-            <form action="#" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Tipo</label>
-                    <select name="" id="" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
-                        <option value="admin">admin</option>
+                    <select name="tipo" id="tipo" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
+                        <?php
+                            $data = mysqli_query($conn, "SELECT * FROM utilizadores");
+
+                            while($row = mysqli_fetch_array($data)){
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Nome</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir nome" required>
+                    <input type="text" name="nome" id="nome" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir nome" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Email</label>
-                    <input type="email" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir email" required>
+                    <input type="email" name="nome" id="nome" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir email" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Password</label>
@@ -53,11 +74,11 @@
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Password</label>
-                    <input type="password" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Cnfirmar palavra-passe" required>
+                    <input type="password" name="passe" id="passe" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Cnfirmar palavra-passe" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Ativo</label>
-                    Sim <input type="checkbox" class="w-4 h-4 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray">
+                    Sim <input type="checkbox" name="ativo" id="ativo" class="w-4 h-4 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray">
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
@@ -68,3 +89,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>
