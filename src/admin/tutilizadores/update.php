@@ -1,3 +1,19 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $id = $_GET['id'];
+        $data = mysqli_query($conn, "SELECT * FROM tipo_utilizador WHERE id=$id");
+        $row = mysqli_fetch_array($data);
+    }
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $id = $_POST['id'];
+        $designacao = $_POST['designacao'];
+
+        mysqli_query($conn, "UPDATE tipo_utilizador SET designacao = '".$designacao."' WHERE ID = ".$id."");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -32,10 +48,11 @@
                 <div><h1 class="text-lg font-bold">Tipo de Utilizador>Editar</h1></div>
                 <div></div>
             </div>
-            <form action="#" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+                <input type="hidden" name="id" value="<?php echo $row[0]; ?>">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Designação</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir cargo" required>
+                    <input type="text" name="designacao" id="designacao" value="<?php if(isset($row[1])){echo $row[1];} ?>" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir cargo" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Guardar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
@@ -46,3 +63,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

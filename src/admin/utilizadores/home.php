@@ -44,13 +44,13 @@
                     <tr class="bg-cor1 py-2"><th>Tipo</th><th>Nome</th><th>Telefone</th><th>Email</th><th>Ativo</th><th></th></tr>
                 </thead>
                 <tbody>
-                <?php
-                    $sql = "SELECT * FROM utilizadores";
-    	            $data = mysqli_query($conn, $sql);
+                    <?php
+                        $sql = "SELECT * FROM utilizadores";
+                        $data = mysqli_query($conn, $sql);
 
-                    while($row = mysqli_fetch_array($data)){
-                        echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
-                    }
+                        while($row = mysqli_fetch_array($data)){
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td>".$row[4]."</td><td>".$row[6]."</td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                        }
                     ?>
                 </tbody>
             </table>

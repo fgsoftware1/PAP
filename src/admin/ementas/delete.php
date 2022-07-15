@@ -1,3 +1,16 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $id = $_GET['id'];
+    }
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $id = $_POST['id'];
+
+        mysqli_query($conn, "DELETE FROM ementas WHERE ID = ".$id."");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -33,11 +46,12 @@
                 <div></div>
             </div>
             <div class="flex justify-center">
-                <form action="">
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
                     <span class="material-symbols-sharp flex text-9xl text-red pl-10">
                     warning
                     </span>
                     <h1 class="font-bold text-2xl pb-5 pr-10">Deseja mesmo eliminar?</h1>
+                    <input type="hidden" name="id" value="<?php if(isset($id)){echo $id;} ?>">
                     <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                     <input type="submit" value="Eliminar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 </form>
@@ -48,3 +62,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

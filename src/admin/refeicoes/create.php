@@ -1,3 +1,15 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $ementa = $_POST['Ementa'];
+        $data = $_POST['Data'];
+        $hora = $_POST['Hora'];
+
+        mysqli_query($conn, "INSERT INTO Refeicoes(Ementa, Data, Hora) values('".$ementa."', '".$data."', '".$hora."')");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -32,10 +44,10 @@
                 <div><h1 class="text-lg font-bold">Refeições>Adicionar</h1></div>
                 <div></div>
             </div>
-            <form action="#" method="POST">
-            <div class="mb-4">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+                <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Ementa</label>
-                    <select name="" id="" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
+                    <select class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
                         <option value="admin">1</option>
                     </select>
                 </div>

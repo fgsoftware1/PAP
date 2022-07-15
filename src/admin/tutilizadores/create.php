@@ -1,3 +1,13 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $designacao = $_POST['designacao'];
+
+        mysqli_query($conn, "INSERT INTO tipo_utilizador(Designacao) values('".$designacao."')");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -32,10 +42,10 @@
                 <div><h1 class="text-lg font-bold">Tipo de Utilizador>Adicionar</h1></div>
                 <div></div>
             </div>
-            <form action="#" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Designação</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir cargo" required>
+                    <input type="text" id="designacao" name="designacao" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir cargo" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
@@ -46,3 +56,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

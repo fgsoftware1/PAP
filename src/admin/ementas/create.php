@@ -1,3 +1,15 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $sopa = $_POST['sopa'];
+        $prato = $_POST['prato'];
+        $sobremesa = $_POST['sobremesa'];
+
+        mysqli_query($conn, "INSERT INTO ementas(Sopa, Prato, Sobremesa) values('".$sopa."', '".$prato."', '".$sobremesa."')");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -32,18 +44,18 @@
                 <div><h1 class="text-lg font-bold">Ementas>Adicionar</h1></div>
                 <div></div>
             </div>
-            <form action="#" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sopa</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sopa" required>
+                    <input type="text" name="sopa" id="sopa" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sopa" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Prato</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir prato" required>
+                    <input type="text" name="prato" id="prato" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir prato" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sobremesa</label>
-                    <input type="text" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sobremesa" required>
+                    <input type="text" name="sobremesa" id="sobremesa" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sobremesa" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
@@ -54,3 +66,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

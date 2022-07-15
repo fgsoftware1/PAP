@@ -1,3 +1,19 @@
+<?php
+    include './admin/include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $nome = $_POST['nome'];
+        $sobrenome = $_POST['sobrenome'];
+        echo $sobrenome;
+        $email = $_POST['email'];
+        $telefone = $_POST['telefone'];
+        $data = $_POST['data'];
+        $hora = $_POST['hora'];
+
+        mysqli_query($conn, "INSERT INTO reservas(Nome, Sobrenome, Email, Telefone, Data, Hora, Confirmado) values('".$nome."', '".$sobrenome."', '".$email."', '".$telefone."', '".$data."', '".$hora."', '0')");
+        header('Location: ./index.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -152,19 +168,19 @@
             <p class="text-2xl text-center font-medium pt-5">Reserve já!</p>
             <div class="flex flex-wrap w-full h-screen bg-cor7 items-center">
                 <div class="w-1/2">
-                    <form class="w-full">
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" class="w-full">
                         <div class="flex flex-wrap mx-3 mb-6">
                             <div class="w-full md:w-1/2 px-3">
                                 <label class="text-xl font-bold mb-2">
                                     Nome
                                 </label>
-                                <input class="w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="introduza o seu nome" required>
+                                <input type="text" name="nome" id="nome" class="w-full border border-gray rounded py-3 px-4 focus:dark-gray" placeholder="introduza o seu nome" required>
                             </div>
                             <div class="w-full md:w-1/2 px-3">
                                 <label class="text-xl font-bold mb-2">
                                     Sobrenome
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="text" placeholder="introduza o seu sobrenome" required>
+                                <input type="text" name="sobrenome" id="sobrenome" class="block w-full border border-gray rounded py-3 px-4 focus:dark-gray" placeholder="introduza o seu sobrenome" required>
                             </div>
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
@@ -172,13 +188,13 @@
                                 <label class="text-xl font-bold mb-2">
                                     Email
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="email" placeholder="introduza o seu email" required>
+                                <input type="email" name="email" id="email" class="block w-full border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" placeholder="introduza o seu email" required>
                             </div>
                             <div class="px-3 w-full">
                                 <label class="text-xl font-bold mb-2">
                                     Telefone
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" type="tel" placeholder="introduza o seu telefone" required>
+                                <input type="tel" name="telefone" id="telefone" class="block w-full border border-gray rounded py-3 px-4 mb-3 focus:dark-gray" placeholder="introduza o seu telefone" required>
                             </div>
                         </div>
                         <div class="flex flex-wrap mx-3 mb-6">
@@ -186,13 +202,17 @@
                                 <label class="text-xl font-bold mb-2">
                                     Data
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="date">
+                                <input type="date" name="data" id="data" class="block w-full border border-gray rounded py-3 px-4 focus:dark-gray">
                             </div>
                             <div class="w-full md:w-1/2 px-3">
                                 <label class="text-xl font-bold mb-2">
                                     Hora
                                 </label>
-                                <input class="block w-full text-gray border border-gray rounded py-3 px-4 focus:dark-gray" type="time">
+                                <input type="time" name="hora" id="hora" class="block w-full border border-gray rounded py-3 px-4 focus:dark-gray">
+                            </div>
+                            <div class="pt-5 flex items-center justify-between">
+                                <input type="reset" value="cancelar" class="bg-cor3 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
+                                <input type="submit" value="submeter" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
                             </div>
                         </div>
                     </form>
@@ -260,8 +280,8 @@
                     <textarea type="text" rows="5" cols="30" max-lenght="2000" class="w-80 border-2 border-gray focus:outline-dark-gray" placeholder="corpo da mensagem" required></textarea>
                 </div>
                 <div class="flex items-center justify-between">
-                    <input type="reset" value="cancelar" class="bg-cor3 hover:bg-cor7 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
-                    <input type="submit" value="submeter" class="bg-cor4 hover:bg-cor7 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
+                    <input type="reset" value="cancelar" class="bg-cor3 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
+                    <input type="submit" value="submeter" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
                 </div>
             </form>
             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d85328.07430872599!2d-7.957523849070762!3d40.63373939024881!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd23370fdf817c41%3A0x21a500bea26165af!2sPal%C3%A1cio%20do%20Gelo!5e0!3m2!1sen!2spt!4v1657208304362!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -282,3 +302,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

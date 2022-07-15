@@ -1,3 +1,21 @@
+<?php
+    include '../include/db.php';
+
+    if($_SERVER['REQUEST_METHOD'] == "GET"){
+        $id = $_GET['id'];
+        $data = mysqli_query($conn, "SELECT * FROM refeicoes WHERE id=$id");
+        $row = mysqli_fetch_array($data);
+    }
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $id = $_POST['id'];
+        $sopa = $_POST['sopa'];
+        $prato = $_POST['prato'];
+        $sobremesa = $_POST['sobremesa'];
+
+        mysqli_query($conn, "UPDATE ementas SET Sopa = '".$sopa."', Prato = '".$prato."', Sobremesa =  '".$sobremesa."' WHERE ID = ".$id."");
+        header('Location: ./home.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
