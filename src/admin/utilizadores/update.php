@@ -1,20 +1,28 @@
 <?php
     include '../include/db.php';
 
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../../login.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $id = $_GET['id'];
         $data = mysqli_query($conn, "SELECT * FROM utilizadores WHERE id=$id");
         $row = mysqli_fetch_array($data);
+
     }
     if($_SERVER['REQUEST_METHOD'] == "POST"){
+        $id = $_POST['id'];
         $tipo = $_POST['tipo'];
         $nome = $_POST['nome'];
         $telefone = $_POST['telefone'];
         $email = $_POST['email'];
-        $passe = $_POST[sha1('passe')];
+        $passe = $_POST['passe'];
         $ativo = $_POST['ativo'];
 
-        mysqli_query($conn, "UPDATE utilizadores SET Tipo = $tipo, Nome = $nome, Telefone = $telefone, Email = $email, Passe = $passe, Ativo = $ativo WHERE ID = $id");
+        mysqli_query($conn, "UPDATE utilizadores SET Utilizadores = '".$tipo."', Nome = '".$nome."', Telefone = '".$telefone."', Email = '".$email."', Passe = '".sha1($passe)."', Ativo = '".$ativo."' WHERE ID = ".$id."");
         header('Location: ./home.php');
     }
 ?>
@@ -58,36 +66,40 @@
                     <label class="flex text-lg font-bold mb-2">Tipo</label>
                     <select name="tipo" id="tipo" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
                         <?php
-                            $data = mysqli_query($conn, "SELECT * FROM utilizadores");
+                            $data = mysqli_query($conn, "SELECT * FROM tipo_utilizador");
 
-                            while($row = mysqli_fetch_array($data)){
-                                echo "<option value='".$row[0]."'>".$row[2]."</option>";
+                            while($row2 = mysqli_fetch_array($data)){
+                                echo "<option value='".$row2[0]."'>".$row2[1]."</option>";
                             }
                         ?>
                     </select>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Nome</label>
-                    <input type="text" name="nome" id="nome" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir nome" required>
+                    <input type="text" name="nome" id="nome" value="<?php echo $row[2]; ?>" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir nome" required>
+                </div>
+                <div class="mb-4">
+                    <label class="flex text-lg font-bold mb-2">Telefone</label>
+                    <input type="tel" name="telefone" id="telefone" value="<?php if(isset($row[3])){echo $row[3];} ?>" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir telefone" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Email</label>
-                    <input type="email" name="nome" id="nome" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir email" required>
+                    <input type="email" name="email" id="email" value="<?php if(isset($row[4])){echo $row[4];} ?>" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir email" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Password</label>
-                    <input type="password" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir palavra-passe" required>
+                    <input type="password" name="pass" id="password" value="" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir palavra-passe" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Password</label>
-                    <input type="password" name="passe" id="passe" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Cnfirmar palavra-passe" required>
+                    <input type="password" name="passe" id="passe" value="" maxlength="15" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Cnfirmar palavra-passe" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Ativo</label>
-                    Sim <input type="checkbox" name="ativo" id="ativo" class="w-4 h-4 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray">
+                    Sim <input type="checkbox" name="ativo" id="ativo" value="<?php if(isset($row[6])){echo $row[6];} ?>" class="w-4 h-4 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray">
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
-                <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
+                <input type="submit" value="Guardar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
             </form>
         </div>
     </div>

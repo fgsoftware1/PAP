@@ -1,6 +1,12 @@
 <?php
     include '../include/db.php';
 
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../../../login.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $id = $_GET['id'];
     }

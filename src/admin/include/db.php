@@ -14,8 +14,7 @@
 
     function tipoUtilizador($id, $conn){
         $data = mysqli_query($conn, "SELECT * FROM tipo_utilizador WHERE ID=$id");
-        $row = mysqli_fetch_array($data);
-
-        return $row[1];
+        $row2 = mysqli_fetch_array($data);
+        return $row2[1];
     }
 ?>

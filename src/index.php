@@ -4,7 +4,6 @@
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
-        echo $sobrenome;
         $email = $_POST['email'];
         $telefone = $_POST['telefone'];
         $data = $_POST['data'];
@@ -212,7 +211,7 @@
                             </div>
                             <div class="pt-5 flex items-center justify-between">
                                 <input type="reset" value="cancelar" class="bg-cor3 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
-                                <input type="submit" value="submeter" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
+                                <input type="submit" value="submeter" class="bg-cor4 text-cor7 font-bold py-2 px-4 ml-4 rounded focus:outline-none focus:shadow-outline shadow-2xl" type="button">
                             </div>
                         </div>
                     </form>

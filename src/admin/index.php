@@ -1,3 +1,10 @@
+<?php
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
 
@@ -84,6 +91,11 @@
                         </span>
                     </a>
                 </li>
+                <li class="text-white font-bold hover:bg-gray-200">
+                    <form action="../logout.php" method="POST">
+                        <input type="submit" value="logout">
+                    </form>
+                </li>
             </ul>
         </div>
         <div class="w-auto flex mt-8 bg-cor7">
@@ -94,3 +106,6 @@
 </body>
 
 </html>
+<?php
+    mysqli_close($conn);
+?>

@@ -1,13 +1,29 @@
 <?php
     include '../include/db.php';
 
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../../login.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $sopa = $_POST['sopa'];
         $prato = $_POST['prato'];
         $sobremesa = $_POST['sobremesa'];
 
-        mysqli_query($conn, "INSERT INTO ementas(Sopa, Prato, Sobremesa) values('".$sopa."', '".$prato."', '".$sobremesa."')");
-        header('Location: ./home.php');
+        if (isset($_FILES['img']))
+        {
+            $caminhoTemp = $_FILES['img']['tmp_name'];
+            $nome = $_FILES['img']['name'];
+            $arraynome = explode(".", $nome);
+            $extensao = $arraynome[1];
+            $novonome = time() . '.' . $extensao;
+            $destino = './img/' . $novonome;
+            move_uploaded_file($caminhoTemp, $destino);
+            mysqli_query($conn, "INSERT INTO ementas(Sopa, Prato, Sobremesa, img) values('".$sopa."', '".$prato."', '".$sobremesa."', '".$destino."')");
+            header('Location: ./home.php');
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -44,7 +60,7 @@
                 <div><h1 class="text-lg font-bold">Ementas>Adicionar</h1></div>
                 <div></div>
             </div>
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sopa</label>
                     <input type="text" name="sopa" id="sopa" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sopa" required>
@@ -56,6 +72,10 @@
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sobremesa</label>
                     <input type="text" name="sobremesa" id="sobremesa" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sobremesa" required>
+                </div>
+                <div class="mb-4">
+                    <label class="flex text-lg font-bold mb-2">Image</label>
+                    <input type="file" name="img" id="img">
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Adicionar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">

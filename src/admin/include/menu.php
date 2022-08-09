@@ -59,4 +59,9 @@
             </span>
         </a>
     </li>
+    <li class="text-white font-bold hover:bg-gray-200">
+    <form action="../../logout.php" method="POST">
+        <input type="submit" value="logout">
+        </form>
+    </li>
 </ul>

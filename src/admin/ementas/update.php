@@ -1,6 +1,12 @@
 <?php
     include '../include/db.php';
 
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../../login.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $id = $_GET['id'];
         $data = mysqli_query($conn, "SELECT * FROM ementas WHERE id=$id");
@@ -12,8 +18,18 @@
         $prato = $_POST['prato'];
         $sobremesa = $_POST['sobremesa'];
 
-        mysqli_query($conn, "UPDATE ementas SET Sopa = '".$sopa."', Prato = '".$prato."', Sobremesa =  '".$sobremesa."' WHERE ID = ".$id."");
-        header('Location: ./home.php');
+        if (isset($_FILES['img']))
+        {
+            $caminhoTemp = $_FILES['img']['tmp_name'];
+            $nome = $_FILES['img']['name'];
+            $arraynome = explode(".", $nome);
+            $extensao = $arraynome[1];
+            $novonome = time() . '.' . $extensao;
+            $destino = './img/' . $novonome;
+            move_uploaded_file($caminhoTemp, $destino);
+            mysqli_query($conn, "UPDATE ementas SET Sopa = '".$sopa."', Prato = '".$prato."', Sobremesa =  '".$sobremesa."', Img = '".$."' WHERE ID = ".$id."");
+            header('Location: ./home.php');
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -50,7 +66,7 @@
                 <div><h1 class="text-lg font-bold">Ementas>Editar</h1></div>
                 <div></div>
             </div>
-            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST">
+            <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="POST" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="<?php echo $row[0]; ?>">
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sopa</label>
@@ -63,6 +79,10 @@
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Sobremesa</label>
                     <input type="text" name="sobremesa" id="sobremesa" value="<?php if(isset($row[3])){echo $row[3];} ?>" maxlength="25" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir sobremesa" required>
+                </div>
+                <div class="mb-4">
+                    <label class="flex text-lg font-bold mb-2">Imagem</label>
+                    <input type="file" name="img" id="img" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Guardar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">

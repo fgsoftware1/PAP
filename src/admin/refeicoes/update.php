@@ -1,6 +1,12 @@
 <?php
     include '../include/db.php';
 
+    session_start();
+
+    if(!isset($_SESSION['nome'])){
+        header("Location: ./../../login.php");
+    }
+
     if($_SERVER['REQUEST_METHOD'] == "GET"){
         $id = $_GET['id'];
         $data = mysqli_query($conn, "SELECT * FROM refeicoes WHERE id=$id");
@@ -8,11 +14,11 @@
     }
     if($_SERVER['REQUEST_METHOD'] == "POST"){
         $id = $_POST['id'];
-        $sopa = $_POST['sopa'];
-        $prato = $_POST['prato'];
-        $sobremesa = $_POST['sobremesa'];
+        $ementa = $_POST['ementa'];
+        $data = $_POST['data'];
+        $hora = $_POST['hora'];
 
-        mysqli_query($conn, "UPDATE ementas SET Sopa = '".$sopa."', Prato = '".$prato."', Sobremesa =  '".$sobremesa."' WHERE ID = ".$id."");
+        mysqli_query($conn, "UPDATE ementas SET Sopa = '".$ementa."', Prato = '".$data."', Sobremesa =  '".$hora."' WHERE ID = ".$id."");
         header('Location: ./home.php');
     }
 ?>
@@ -47,23 +53,29 @@
         </div>
         <div class="w-full h-fit p-10 bg-cor7">
             <div class="flex justify-between w-3/4 py-6">
-                <div><h1 class="text-lg font-bold">Refeições>Adicionar</h1></div>
+                <div><h1 class="text-lg font-bold">Refeições>Editar</h1></div>
                 <div></div>
             </div>
             <form action="#" method="POST">
             <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Ementa</label>
-                    <select name="" id="" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
-                        <option value="admin">1</option>
+                    <select name="ementa" id="ementa" value="<?php if(isset($row[1])){echo $row[1];} ?>" class="border-2 border-gray w-80 rounded-lg h-10" autofocus>
+                        <?php
+                            $data = mysqli_query($conn, "SELECT * FROM ementas");
+
+                            while($row = mysqli_fetch_array($data)){
+                                echo "<option value='".$row[0]."'>".$row[1]."</option>";
+                            }
+                        ?>
                     </select>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Data</label>
-                    <input type="date" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir data" required>
+                    <input type="date" name="data" id="data" value="<?php if(isset($row[2])){echo $row[2];} ?>" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir data" required>
                 </div>
                 <div class="mb-4">
                     <label class="flex text-lg font-bold mb-2">Hora</label>
-                    <input type="time" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir hora" required>
+                    <input type="time" name="hora" id="hora" value="<?php if(isset($row[3])){echo $row[3];} ?>" class="w-80 h-10 border-2 border-gray text-sm rounded-lg focus:outline-dark-gray" placeholder="Introduzir hora" required>
                 </div>
                 <input type="reset" value="Cancelar" class="bg-red text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">
                 <input type="submit" value="Guardar" class="bg-cor4 text-cor7 font-bold py-2 px-4 rounded shadow-2xl" type="button">

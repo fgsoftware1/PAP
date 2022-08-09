@@ -2,6 +2,8 @@ const menu = document.querySelector("#menu");
 const botao = document.querySelector("#botao");
 const opcoes = document.querySelector("#opcoes");
 const mostra = document.querySelectorAll(".mostrar");
+const pass = document.getElementById(pass).value;
+const passe = document.getElementById(passe).value;
 
 botao.addEventListener("click", () => {
     if(menu.classList.contains('w-56')){

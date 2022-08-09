@@ -1,5 +1,11 @@
 <?php
     include '../include/db.php';
+
+    // session_start();
+
+    // if(!isset($_SESSION['nome'])){
+    //     header("Location: ./../../login.php");
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="pt" class="scroll-smooth">
@@ -13,7 +19,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../../res/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../../res/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../../res/img/favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../../../dist/output.css">
 </head>
@@ -41,7 +46,7 @@
             </div>
             <table class="w-3/4">
                 <thead>
-                    <tr class="bg-cor1 py-2"><th>Sopa</th><th>Prato</th><th>Sobremesa</th><th></th></tr>
+                    <tr class="bg-cor1 py-2"><th>Sopa</th><th>Prato</th><th>Sobremesa</th><th>Imagem</th><th></th></tr>
                 </thead>
                 <tbody>
                     <?php
@@ -49,7 +54,7 @@
     	                $data = mysqli_query($conn, $sql);
 
                         while($row = mysqli_fetch_array($data)){
-                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
+                            echo "<tr class='py-4 border-b-2'><td>".$row[1]."</td><td>".$row[2]."</td><td>".$row[3]."</td><td><img src='".$row[4]."' class='w-6'></td><td><a href='update.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle'>edit</span></a><a href='delete.php?id=".$row[0]."'><span class='material-symbols-sharp align-middle ml-4'>delete</span></a></td></tr>";
                         }
                     ?>
                 </tbody>
